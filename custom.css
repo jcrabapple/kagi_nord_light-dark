@@ -368,6 +368,9 @@ input[type="date"] { color: var(--primary-600) !important; }
   #thread-sidebar-visible:checked~#sidebar-backdrop {
     background-color: unset !important;
   }
+  body:not(._0_processing) #form:has(#promptBox:placeholder-shown):has(#uploadedItems:empty) #submit {
+        color: var(--primary-800);
+  }
   
   /* Navigation styles for mobile */
   .landing_cat_buttons {
