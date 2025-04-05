@@ -250,6 +250,10 @@ header .header-btn:hover { color: var(--crust); }
   padding: 8px 16px; background-color: var(--surface0); font-weight: 700;
 }
 
+dialog {
+  background: unset !important;
+}
+
 .landing-category-select .landing_cat_buttons > button {
   border-bottom: 2px solid transparent; color: var(--primary);
   font-size: .875rem; height: 47px; margin: 0; min-width: unset !important;
@@ -283,7 +287,6 @@ header .header-btn:hover { color: var(--crust); }
 .promptOptionsSelector .custom-assistants span a:hover,
 .promptOptionsSelector .custom-assistants li.option.focus,
 .prompt-options label:hover, .prompt-options button:hover { background-color: var(--surface0) !important; }
-
 .promptOptionsSelector .custom-assistants li.option,
 .promptOptionsSelector .default-assistants li.option { color: var(--text); }
 
@@ -298,7 +301,7 @@ header .header-btn:hover { color: var(--crust); }
   border-radius: 25px; margin-top: 25px; margin-bottom: 10px; padding: 20px; background-color: var(--crust);
 }
 
-.chat_bubble:focus-within:before, .chat_bubble:hover:before { background-color: unset !important; }
+
 .chat_bubble .actions { display: inline-flex !important; gap: 8px !important; flex-direction: row !important; }
 #chat_box .chat_bubble .actions [data-action]:is(a,button):hover { background: var(--surface1); }
 
@@ -324,7 +327,7 @@ input[type="date"] { color: var(--primary-600) !important; }
 /* Upload items */
 #uploadedItems .item .type, #uploadedItems .item .icon, #uploadedItems .item .name { color: var(--crust); }
 #form .uploadLabel:hover { color: var(--crust); }
-.POI-item-back .text { color: var(--crust); }
+.POI-item-back .text, .d-info-section-desc { color: var(--crust); }
 #popover-privacy > p:nth-child(3) > span > i { color: var(--crust) !important; }
 
 /* Search results */
@@ -336,20 +339,12 @@ input[type="date"] { color: var(--primary-600) !important; }
   margin-inline: auto; max-width: 850px;
   padding-inline: 16px; width: 100%;
 }
+.chat_bubble:focus-within:before, .chat_bubble:hover:before, #thread-sidebar-visible:checked~#sidebar-backdrop, .quick-settings, .quick-settings-footer, .promptOptionsSelector, .promptOptionsSelector .search-bar, .k_ui_dropdown_data_list, ._0_more_search_box, .dropdown .dd-list {
+background-color: var(--crust) !important;
+}
 
 /* Optional: disable underline on title links */
 .__sri-title .__sri_title_link { border-bottom: none; }
-
-/* Desktop / Widescreen styles */
-@media (min-width: 1280px) {
-:root {
-    --sidebar-width: 550px;
-  }
-
-  .sidebar-box > .threads-pane {
-    min-width: 350px;
-  }
-}
 
 /* Mobile styles */
 @media all and (max-device-width: 766px) {
@@ -365,9 +360,7 @@ input[type="date"] { color: var(--primary-600) !important; }
     border: none; color: var(--primary); font-size: .875rem; height: 47px;
     margin: 0; min-width: unset !important; padding: 0 8px; position: relative;
   }
-  #thread-sidebar-visible:checked~#sidebar-backdrop {
-    background-color: unset !important;
-  }
+  
   body:not(._0_processing) #form:has(#promptBox:placeholder-shown):has(#uploadedItems:empty) #submit {
         color: var(--primary-800);
   }
